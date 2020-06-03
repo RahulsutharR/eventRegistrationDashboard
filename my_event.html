@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Dashboard</title>
+  <title>TRON</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -34,7 +34,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
@@ -45,15 +45,16 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Explore</span></a>
-      </li>
+
       <li class="nav-item active">
         <a class="nav-link" href="my_event.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>My Events</span></a>
+          <span>Created Events</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Insights</span></a>
       </li>
 
       <!-- Divider -->
@@ -140,42 +141,25 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">My Events</h1>
+            <h1 class="h3 mb-0 text-gray-800">Created Events</h1>
             <button style="border: none; background-color:white" onclick="new1();"><i class="fas fa-plus-circle"
                 style="color:green;font-size:50px"></i></button>
           </div>
-          <div class="card"
-            style="width:30%;  border-bottom:1px solid #B9B5BD;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-            <img class="card-img" src="card/thor.jpg" alt="Card image">
-            <div class="card-body">
-              <h3 class="card-title">Event 1</h3>
-              <p class="card-text">
-              <h4>Student name </h4>
-              </p>
 
-            </div>
+
+          <div class="row events">
+
           </div>
+
           <div class="modal" id="my_Modal">
             <div class=" modal-dialog">
-              <div class="modal-content" style="margin-left: 200px;width:80% ;height: 650px;margin-top: 50px;">
+              <div class="modal-content" style="margin-left: 400px;width:50% ;height: 400px;margin-top: 50px;">
 
 
                 <!-- Modal body -->
                 <div class="modal-body" style="margin-left: 0px; width:100% ;height: 100%;">
 
                   <div class="multisteps-form" style="width:100% ;height: 100%;">
-                    <!--progress bar-->
-                    <div class="row">
-                      <div class="col-12 col-lg-8 ml-auto mr-auto mb-4" style="margin: 0px;">
-                        <div class="multisteps-form__progress">
-                          <button class="multisteps-form__progress-btn js-active" type="button" title="User Info">Event
-                            Info</button>
-                          <button class="multisteps-form__progress-btn" type="button" title="Address">Preview</button>
-                          <button class="multisteps-form__progress-btn" type="button"
-                            title="Order Info">Success</button>
-                        </div>
-                      </div>
-                    </div>
                     <!--form panels-->
                     <div class="row" style="margin:0px">
                       <div class="col-12 col-lg-8 m-auto">
@@ -188,95 +172,30 @@
                               <div class="form-row mt-4">
                                 <div class="col-12 col-sm-6">
                                   <input class="multisteps-form__input form-control" type="text"
-                                    placeholder="Full Name" />
+                                    placeholder="Event Name" />
                                 </div>
                                 <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                  <input class="multisteps-form__input form-control" type="text" placeholder="Email" />
+                                  <input class="multisteps-form__input form-control" type="text" placeholder="Venue" />
                                 </div>
                               </div>
                               <div class="form-row mt-4">
                                 <div class="col-12 col-sm-6">
                                   <input class="multisteps-form__input form-control" type="text"
-                                    placeholder="Mobile No." />
+                                    placeholder="Date of Event" />
                                 </div>
                                 <div class="col-12 col-sm-6 mt-4 mt-sm-0">
                                   <input class="multisteps-form__input form-control" type="text"
-                                    placeholder="No.of Ticket" />
+                                    placeholder="Event Type" />
                                 </div>
                               </div>
                               <div class="form-row mt-4">
                                 <div class="col-12 col-sm-6 mt-4 mt-sm-0">
                                   <input class="multisteps-form__input form-control" type="text"
-                                    placeholder="Upload ID CARD" />
-                                </div>
-                                <span class="input-group-btn">
-
-                                  <input type="file" class="file-upload" name="myFile" />
-                                  </button>
-                                </span>
-                              </div>
-                              <div class="form-row mt-4">
-                                <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                  <label for="region">REGISTRATION TYPE :</label>
-                                  <select id="region"
-                                    style="width: 100%;  padding: 12px 20px;  margin: 8px 0;  display: inline-block; border: 1px solid #ccc;  border-radius: 4px;  box-sizing: border-box;">
-                                    <option value="SELF" selected="selected">SELF</option>
-                                    <option value="GROUP">GROUP</option>
-                                    <option value="CORPORATE">CORPORATE</option>
-
-                                    <option value="OTHER">OTHER</option>
-                                  </select>
+                                    placeholder="Free or Paid" />
                                 </div>
                               </div>
                               <div class="button-row d-flex mt-4">
-                                <button class="btn btn-primary ml-auto js-btn-next" type="button"
-                                  title="Next">Next</button>
-                              </div>
-                            </div>
-                          </div>
-                          <!--single form panel-->
-                          <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
-                            <h3 class="multisteps-form__title">Preview</h3>
-                            <div class="multisteps-form__content">
-
-                              <!-- MY CODE -->
-                              <div class="col-md-6 img">
-                                <img
-                                  src="data:image/jpeg;base64,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"
-                                  alt="" class="img-rounded">
-                              </div>
-                              <div class="col-md-6 details" style="position:absolute;  right:10px;  top:50px;">
-
-                                <br>
-                                <p style="font-size:15px;font-weight:bold;">
-                                  Full Name : <i>Anuj Shrama</i> <br><br><br>
-                                  Email : <i>anujsharma11098@gmail.com</i> <br><br><br>
-                                  Mobile No. : <i>7726062540</i><br><br><br>
-                                  No. of Ticket : <i>100</i><br><br><br>
-                                  Registration Type : <i>GROUP</i>
-                                </p>
-                              </div><br><br><br><br><br>
-
-
-                              <div class="button-row d-flex mt-4">
-                                <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
-
-                                <button class="btn btn-success ml-auto js-btn-next" type="button"
-                                  title="Send">Send</button>
-                              </div>
-                            </div>
-                          </div>
-
-                          <!--single form panel-->
-                          <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
-                            <h3 class="multisteps-form__title">Success</h3>
-                            <div class="multisteps-form__content">
-                              <div class="form-row mt-4">
-                                <h1>REGISTRATION ID : AS_7854</h1>
-                              </div>
-                              <div class="button-row d-flex mt-4">
-                                <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
-
+                                <button class="btn btn-primary ml-auto " type="button" title="Next">Create</button>
                               </div>
                             </div>
                           </div>
@@ -293,7 +212,6 @@
 
         </div>
         <!-- /.container-fluid -->
-
       </div>
       <!-- End of Main Content -->
 
@@ -301,7 +219,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+            <span>Copyright &copy; Your Website 2020</span>
           </div>
         </div>
       </footer>
@@ -361,6 +279,52 @@
 
     function new1() {
       $("#my_Modal").modal()
+    }
+
+    const token = localStorage.getItem('token')
+    if (token) {
+      console.log(token)
+    }
+    else {
+      location = '/login.html'
+    }
+
+    $(document).ready(() => {
+      getEvents()
+    })
+    let Nevents
+    const getEvents = async () => {
+      let result = await fetch('https://event--registration.herokuapp.com/api/createEvent', {
+        headers: {
+          'Authorization': token
+        }
+      })
+      result = await result.json()
+      console.log(result)
+      const fetchedEvents = result.events
+      let element = ""
+
+      for (let i = 0; i < fetchedEvents.length; i++) {
+        console.log("hello")
+        let e = `<div class="col-md-6">
+              <div class="card"
+            style="width:30%;  border-bottom:1px solid #B9B5BD;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+            <img class="card-img" src="card/thor.jpg" alt="Card image">
+            <div class="card-body">
+              <h3 class="card-title"><a href="index.html?id=${fetchedEvents[i]._id}">${fetchedEvents[i].eventName}</a></h3>
+              <p class="card-text">
+              <h6>${fetchedEvents[i].date} </h6>
+              <h6>${fetchedEvents[i].payment} </h6>
+              </p>
+
+            </div>
+          </div>
+            </div>`
+        element = element + e
+      }
+      $('.events').empty()
+      $('.events').append(element)
+      Nevents = element
     }
   </script>
 

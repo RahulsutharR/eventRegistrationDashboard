@@ -46,7 +46,7 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                   </div>
-                  <form class="user">
+                  <form class="user" id="form1">
                     <div class="form-group">
                       <input type="email" class="form-control form-control-user" id="Email" aria-describedby="emailHelp"
                         placeholder="Enter Email Address...">
@@ -90,15 +90,35 @@
   <!-- my Login sccript -->
   <script>
 
-    const login_user = async () => {
-      let result = await fetch('https://event--registration.herokuapp.com/api/user', {
+    const login_user = async function (e) {
+      e.preventDefault()
+      let obj = {
+
+        'email': $("#Email").val(),
+        'password': $('#pass').val()
+      }
+      let result = await fetch('https://event--registration.herokuapp.com/api/user/login', {
+        method: 'POST',
         headers: {
-          'email': $('#Email').val(),
-          'password': $('#pass').val()
-        }
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(obj)
       })
-      console.log(result)
+      const json = await result.json()
+      console.log(json)
+      if (json.status == 200) {
+        localStorage.setItem('token', json.token)
+        location = './index.html'
+      }
+      else {
+        alert("Inavlid")
+      }
+
     }
+    $('#form1').submit(login_user)
+
+
+
   </script>
 </body>
 
