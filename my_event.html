@@ -171,31 +171,31 @@
                             <div class="multisteps-form__content">
                               <div class="form-row mt-4">
                                 <div class="col-12 col-sm-6">
-                                  <input class="multisteps-form__input form-control" type="text"
+                                  <input class="multisteps-form__input form-control" type="text" id="ename"
                                     placeholder="Event Name" />
                                 </div>
                                 <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                  <input class="multisteps-form__input form-control" type="text" placeholder="Venue" />
+                                  <input class="multisteps-form__input form-control" type="text" placeholder="Venue" id="ven"/>
                                 </div>
                               </div>
                               <div class="form-row mt-4">
                                 <div class="col-12 col-sm-6">
-                                  <input class="multisteps-form__input form-control" type="text"
+                                  <input class="multisteps-form__input form-control" type="text" id="date"
                                     placeholder="Date of Event" />
                                 </div>
                                 <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                  <input class="multisteps-form__input form-control" type="text"
+                                  <input class="multisteps-form__input form-control" type="text" id="etype"
                                     placeholder="Event Type" />
                                 </div>
                               </div>
                               <div class="form-row mt-4">
                                 <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                  <input class="multisteps-form__input form-control" type="text"
+                                  <input class="multisteps-form__input form-control" type="text" id="pay"
                                     placeholder="Free or Paid" />
                                 </div>
                               </div>
                               <div class="button-row d-flex mt-4">
-                                <button class="btn btn-primary ml-auto " type="button" title="Next">Create</button>
+                                <button class="btn btn-primary ml-auto " type="button" title="Next" onclick="sendInterest();">Create</button>
                               </div>
                             </div>
                           </div>
@@ -308,12 +308,13 @@
         console.log("hello")
         let e = `<div class="col-md-6">
               <div class="card"
-            style="width:30%;  border-bottom:1px solid #B9B5BD;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+            style="width:50%;  border-bottom:1px solid #B9B5BD;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
             <img class="card-img" src="card/thor.jpg" alt="Card image">
             <div class="card-body">
               <h3 class="card-title"><a href="index.html?id=${fetchedEvents[i]._id}">${fetchedEvents[i].eventName}</a></h3>
               <p class="card-text">
-              <h6>${fetchedEvents[i].date} </h6>
+              <h6>Date : ${fetchedEvents[i].date}</h6>
+              <h6>Venue :${fetchedEvents[i].venue}</h6>
               <h6>${fetchedEvents[i].payment} </h6>
               </p>
 
@@ -326,6 +327,29 @@
       $('.events').append(element)
       Nevents = element
     }
+
+    const sendInterest = async () => {
+    let obj ={
+      "eventName" : $('#ename').val(),
+    "venue":$('#ven').val(),
+    "date" : $('#date').val(),
+    "payment":$('#pay').val(),
+    "eventType":$('#etype').val()
+        
+    }
+    console.log(obj)
+    let result = await fetch('https://event--registration.herokuapp.com/api/createEvent', {
+        method :"POST",
+        headers : {
+          'Authorization': token,
+          'Content-Type' : 'application/json'
+        },
+        body : JSON.stringify(obj)
+    })
+    const json = await result.json()
+    console.log(json)
+
+}
   </script>
 
 </body>
