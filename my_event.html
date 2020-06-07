@@ -13,12 +13,14 @@
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  
   <link
     href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
     rel="stylesheet">
-
+    
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.css" rel="stylesheet">
+  
   <link rel="stylesheet" href="card/a.css">
   <link rel="stylesheet" href="form/style.css">
 
@@ -51,11 +53,11 @@
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Created Events</span></a>
       </li>
-      <li class="nav-item active">
+      <!-- <li class="nav-item active">
         <a class="nav-link" href="#">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Insights</span></a>
-      </li>
+      </li> -->
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -306,10 +308,10 @@
 
       for (let i = 0; i < fetchedEvents.length; i++) {
         console.log("hello")
-        let e = `<div class="col-md-6">
+        let e = `<div class="col-md-6" style="padding: 20px; width: 300px">
               <div class="card"
-            style="width:50%;  border-bottom:1px solid #B9B5BD;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-            <img class="card-img" src="card/thor.jpg" alt="Card image">
+            style="width:100%;  border-bottom:1px solid #B9B5BD;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+            <img class="card-img" src="tron.png" alt="Card image">
             <div class="card-body">
               <h3 class="card-title"><a href="index.html?id=${fetchedEvents[i]._id}">${fetchedEvents[i].eventName}</a></h3>
               <p class="card-text">
