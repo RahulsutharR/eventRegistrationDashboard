@@ -224,25 +224,22 @@
       
         
     
-    const email = localStorage.getItem('email')
-    console.log(email)
+    const id = localStorage.getItem('id')
+    console.log(id)
     
     const getTask = async () => {
-      let result = await fetch('https://task--hub.herokuapp.com/api/todo/analysis/'+ email, {
+      let result = await fetch('https://event--registration.herokuapp.com/api/todo/analysis/'+ id, {
         
       })
       result = await result.json()
-      
-    }
-    
-    var ctx = document.getElementById('myChart').getContext('2d');
+      var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Personal', 'Work', 'Shopping', 'Other', ],
+            labels: ['SELF', 'GROUP', 'CORPORATE', 'OTHER' ],
             datasets: [{
                 label: '# of Votes',
-                data: [ 3, 2, 1, 5],
+                data: [ result['SELF'],result['GROUP'] ,result['CORPORATE'] ,result['OTHER'] ],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -272,6 +269,9 @@
             }
         }
     });
+    }
+    
+    
     </script>
 
 </body>

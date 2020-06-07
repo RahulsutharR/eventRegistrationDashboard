@@ -245,6 +245,7 @@
     let id = window.location.search
     event_id = id.slice(4)
     console.log(event_id)
+    localStorage.setItem('id',event_id)
     const getEvents = async () => {
       let result = await fetch('https://event--registration.herokuapp.com/api/interested/' + event_id, {
         headers: {
