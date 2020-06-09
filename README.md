@@ -32,9 +32,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Login](https://github.com/anujsharma11098/TaskHub/blob/master/images/tasklogin.png?raw=true)
-![task](https://github.com/anujsharma11098/TaskHub/blob/master/images/task.png?raw=true)
-![Insight](https://github.com/anujsharma11098/TaskHub/blob/master/images/taskInsight.png?raw=true)
+![Login](https://github.com/anujsharma11098/TaskHub/blob/master/images/admin_login.png?raw=true)
+![myevent](https://github.com/anujsharma11098/TaskHub/blob/master/images/dashboard.png?raw=true)
+![Insight](https://github.com/anujsharma11098/TaskHub/blob/master/images/event_insight.png?raw=true)
+![registered-user](https://github.com/anujsharma11098/TaskHub/blob/master/images/registered_user.png?raw=true)
+
 The idea is to create a web based and a mobile based application which can make note of your tasks which the user  have to complete or you have already completed.
 
 The application will be designed with an easy and material design inspired user interface so as to make it easy for people to use it.
